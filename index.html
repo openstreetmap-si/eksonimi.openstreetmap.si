@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slovenski Eksonimi - OpenStreetMap Slovenija</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
+  <script src="https://cdn.klokantech.com/openmaptiles-language/v1.0/openmaptiles-language.js"></script>
+  <link href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    #map {position: absolute; top: 50px; right: 0; bottom: 0; left: 0;}
+    header {height: 50px;}
+    header h1 {margin:0;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Slovenski Eksonimi - OpenStreetMap</h1>
+  </header>
+  <div id="map"></div>
+  <script>
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'https://free.tilehosting.com/styles/basic/style.json?key=RiCgshB6mfyd26M9B2Ph',
+      center: [30, 25],
+      zoom: 2,
+      hash: true,
+    //   dragRotate: false,
+    //   bearing: 180
+    });
+    map.setLanguage('sl', true);
+  </script>
+</body>
+</html>
