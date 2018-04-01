@@ -6,7 +6,9 @@
   <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
   <script src="https://cdn.klokantech.com/openmaptiles-language/v1.0/openmaptiles-language.js"></script>
   <link href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" rel="stylesheet" />
-  <style>
+  <script src="https://cdn.klokantech.com/osmnames/v1/autocomplete.js"></script>
+  <link href="https://cdn.klokantech.com/osmnames/v1/autocomplete.css" rel="stylesheet" />
+<style>
     #map {position: absolute; top: 50px; right: 0; bottom: 0; left: 0;}
     header {height: 50px;}
     header h1 {margin:0;}
@@ -14,7 +16,10 @@
 </head>
 <body>
   <header>
-    <h1>Slovenski Eksonimi - OpenStreetMap</h1>
+    <h1>
+      Slovenski Eksonimi - OpenStreetMap
+      <input autocomplete="off" id="search" type="text" />
+    </h1>
   </header>
   <div id="map"></div>
   <script>
@@ -28,6 +33,21 @@
     //   bearing: 180
     });
     map.setLanguage('sl', true);
+    map.addControl(new mapboxgl.FullscreenControl());
+    map.addControl(new mapboxgl.ScaleControl({
+      // maxWidth: 80,
+      // unit: 'imperial'
+    }));
+    var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
+
+    var autocomplete = new kt.OsmNamesAutocomplete(
+        'search', 'https://geocoder.tilehosting.com/', 'dgz5zNlwEk8Oup3sYX1O');
+    autocomplete.registerCallback(function(item) {
+      // alert(JSON.stringify(item, ' ', 2));
+      console.log(item);
+      map.fitBounds(item.boundingbox, { padding: 10, maxZoom: 18});
+    });
   </script>
 </body>
 </html>
