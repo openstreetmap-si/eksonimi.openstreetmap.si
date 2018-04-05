@@ -33,6 +33,7 @@
           }
           newLayer.id += postfix ? '-'+postfix : '';
           newLayer.layout['text-field'] = decorator['layout.text-field'];
+          newLayer.paint['text-color'] = decorator['paint.text-color'];
           if(newLayer.layout['symbol-placement']==='line') {
             newLayer.layout['text-field'] =
                 newLayer.layout['text-field'].replace('\n', ' ');
@@ -108,6 +109,7 @@
         "decorators": [
           {
             "layout.text-field": "{name:latin}" + (noAlt ? "" : "\n{name:nonlatin}"),
+            "paint.text-color": "#855",
             "filter-all-part": [
               "!has",
               "name:" + language
@@ -116,6 +118,7 @@
           {
             "layer-name-postfix": language,
             "layout.text-field": "{name:" + language + "}" + (noAlt ? "" : "\n{name:" + (isNonlatin ? 'latin' : 'nonlatin') + "}"),
+            "paint.text-color": "#006600",
             "filter-all-part": [
               "has",
               "name:" + language
