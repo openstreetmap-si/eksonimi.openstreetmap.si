@@ -118,7 +118,7 @@
           {
             "layer-name-postfix": language,
             "layout.text-field": "{name:" + language + "}" + (noAlt ? "" : "\n{name:" + (isNonlatin ? 'latin' : 'nonlatin') + "}"),
-            "paint.text-color": "#006600",
+            "paint.text-color": "#004400",
             "filter-all-part": [
               "has",
               "name:" + language
