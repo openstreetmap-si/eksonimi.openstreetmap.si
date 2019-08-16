@@ -1,4 +1,4 @@
-# Eksonimi v OpensStreetMap-u
+# Eksonimi v OpenStreetMap-u
 Slovenski eksonimi v OpenStreetMap-u - https://eksonimi.openstreetmap.si
 
 More about Slovenian exonyms in OpenStreetMap wiki: https://wiki.openstreetmap.org/wiki/Key:name:sl
