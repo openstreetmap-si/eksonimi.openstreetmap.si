@@ -55,8 +55,8 @@
     };
   
     var setStyleMutex = false;
-    var origSetStyle = mapboxgl.Map.prototype.setStyle;
-    mapboxgl.Map.prototype.setStyle = function() {
+    var origSetStyle = maplibregl.Map.prototype.setStyle;
+    maplibregl.Map.prototype.setStyle = function() {
       origSetStyle.apply(this, arguments);
   
       if (!setStyleMutex) {
@@ -74,7 +74,7 @@
       }
     };
   
-    mapboxgl.Map.prototype.setLanguage = function(language, noAlt) {
+    maplibregl.Map.prototype.setLanguage = function(language, noAlt) {
       this.languageOptions = {
         language: language,
         noAlt: noAlt
@@ -141,7 +141,7 @@
       setStyleMutex = false;
     };
   
-    mapboxgl.Map.prototype.autodetectLanguage = function(opt_fallback) {
+    maplibregl.Map.prototype.autodetectLanguage = function(opt_fallback) {
       this.setLanguage(navigator.language.split('-')[0] || opt_fallback || 'native');
     };
   })();

@@ -3,12 +3,10 @@
 <head>
   <title>Slovenski Eksonimi - OpenStreetMap Slovenija</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.2/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.2/mapbox-gl.css' rel='stylesheet' />
-    <!-- <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script> -->
+  <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+  <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
   <!-- <script src="https://cdn.klokantech.com/openmaptiles-language/v1.0/openmaptiles-language.js"></script> -->
   <script src="openmaptiles-language.js"></script>
-  <!-- <link href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" rel="stylesheet" /> -->
   <script src="https://cdn.klokantech.com/osmnames/v1/autocomplete.js"></script>
   <link href="https://cdn.klokantech.com/osmnames/v1/autocomplete.css" rel="stylesheet" />
 <style>
@@ -26,7 +24,7 @@
   </header>
   <div id="map"></div>
   <script>
-    var map = new mapboxgl.Map({
+    var map = new maplibregl.Map({
       container: 'map',
       style: 'https://api.maptiler.com/maps/bright/style.json?key=RiCgshB6mfyd26M9B2Ph',
       center: [30, 25],
@@ -36,12 +34,12 @@
     //   bearing: 180
     });
     map.setLanguage('sl', true);
-    map.addControl(new mapboxgl.FullscreenControl());
-    map.addControl(new mapboxgl.ScaleControl({
+    map.addControl(new maplibregl.FullscreenControl());
+    map.addControl(new maplibregl.ScaleControl({
       // maxWidth: 80,
       // unit: 'imperial'
     }));
-    var nav = new mapboxgl.NavigationControl();
+    var nav = new maplibregl.NavigationControl();
 map.addControl(nav, 'top-left');
 
     var autocomplete = new kt.OsmNamesAutocomplete(
